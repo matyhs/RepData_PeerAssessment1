@@ -49,15 +49,9 @@ hist(groupdata$x, xlab="Total Steps", main="Histogram of Total Steps")
 
 ```{r meanmediansteps}
 
-groupdata <- aggregate(data$steps, list(data$date), mean, na.rm=TRUE)
-kable(groupdata, 
-      col.names = c("Date", "Average Steps"), align = 'l', 
-      caption = "Avg. Steps Per Day")
+print(paste("Mean of the total number of steps = ", mean(groupdata$x)))
 
-groupdata <- aggregate(data$steps, list(data$date), median, na.rm=TRUE)
-kable(groupdata, 
-      col.names = c("Date", "Median Steps"), align = 'l', 
-      caption = "Median Steps Per Day")
+print(paste("Median of the total number of steps = ", median(groupdata$x)))
 
 ```
 
@@ -118,15 +112,9 @@ Based on the graphs below, there is a significant difference from using the orig
 groupdata<- aggregate(imputdata$steps.x, list(imputdata$date), sum, na.rm=TRUE)
 hist(groupdata$x, xlab="Total Steps", main="Histogram of Total Steps")
 
-groupdata <- aggregate(imputdata$steps.x, list(imputdata$date), mean, na.rm=TRUE)
-kable(groupdata, 
-      col.names = c("Date", "Average Steps"), align = 'l', 
-      caption = "Avg. Imputed Steps Per Day")
+print(paste("Mean of the total number of steps = ", mean(groupdata$x)))
 
-groupdata <- aggregate(imputdata$steps.x, list(imputdata$date), median, na.rm=TRUE)
-kable(groupdata, 
-      col.names = c("Date", "Median Steps"), align = 'l', 
-      caption = "Median Imputed Steps Per Day")
+print(paste("Median of the total number of steps = ", median(groupdata$x)))
 
 ```
 
